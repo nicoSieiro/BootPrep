@@ -11,7 +11,7 @@ Para ver la lista de repositorios remotos en nuestro proyecto podemos hacer `gir
 ## Agregar repositorios remotos
 
 Para agregar un nuevo repositorio Git remoto y asignarle un nombre con el que referenciarlo fácilmente, hacemos:
-
+  
 ```
 $ git remote add [nombre] [url]
 ```

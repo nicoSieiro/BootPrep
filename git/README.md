@@ -1,8 +1,7 @@
 ### Code Ramp - Plataforma 5
 
 # Git & GitHub
-
-
-* [Introduccion a Git y control de versiones(VCS)](./teoria/intro.md)
-* [Instalando Git + Git local](./teoria/local.md)
-* [Git remoto](./teoria/remote.md)
+  
+* [Introduccion a Git y control de versiones(VCS)](./intro)
+* [Instalando Git + Git local](./local)
+* [Git remoto](./remote)
