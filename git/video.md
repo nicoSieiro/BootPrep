@@ -281,17 +281,147 @@ con esos comandos basicos ya podemos guardar las diferentes versiones de nuestro
 
 (Y)
 
-
-
 ## ADVANCED GIT ##
+
+Hasta ahora podiamos guardar y enviar archivos a nuestro repositorio remoto, pero que pasa si queremos trabajar varias personas en el mismo proyecto? podriamos hacerlo como veniamos haciendol,o pero tendriamos que ser extremadamente ordenados o acostumbrarnos a que los archivos que se trabajen en conjunto tengan problemas a la hora de combinar el codigo.
+
+para evitar estos problemas existen las ramas (o branches)
+
+un branch es una version en paralelo de la linea principal de trabajo
+
+se usan principalmente para agregar un feature nuevo, arreglar algun bug, o crear un entorno seguro para experimentar alguna idea nueva.
+
+finalmente cuando el trabajo esta terminado fusionamos nuestra branch a su original y solo tenemos que lidear una vez con el llamado 'merge'.
+
+vamos a usar git branch para listar las branches excistentes en nuestro repositorios.
 
 ``` bash
 $ git branch
-
-$ git checkout "branch"
-
-$ git merge
 ```
+
+cuando la unica branch es 'master', la branch por defecto, entonces no se va listar nada
+
+vamos a agragar un archivo con algo de contenido.
+
+``` bash
+$ touch hola.js && echo 'console.log("hola como va?")' > hola.js
+
+$ node hola
+```
+
+ahora commiteemoslo para tener algo que comparar con una futura branch
+
+``` bash
+$ git add hola.js
+
+$ git commit -m 'agrego hola.js'
+```
+
+ahora que nuestro master tiene un archivo podemos crear la branch paralela.
+
+``` bash
+$ git checkout -b test
+```
+
+"switched to a new branch test" por lo que nuestra branch fue creada con exito y ahora estamos parados en ella, cosa que cualquier cambio se mantendra en el entorno de la branch
+
+probemos cambiar nuestro archivo
+
+``` bash
+$ echo 'console.log("modificado")' > hola.js
+
+$ node hola
+
+$ git status
+```
+
+ya tenemos los cambio para guardar
+
+``` bash
+$ git add hola.js
+
+$ git commit -m 'cambio'
+```
+
+ya que tenemos guardados los cambio pasemonos a la branch 'master'
+
+``` bash
+$ git checkout master
+```
+
+veamos como esta la situacion aca
+
+``` bash
+$ git status
+```
+
+no tenemos archivos modificados (logico)
+asique tambien tendriamos que tener los cambios originales del master
+
+``` bash
+$ node hola
+```
+
+excelente, ahora nuestro propio paso es juntar las branches, esto lo vamos a hacer con 'git merge', pero antes una pregunta...
+
+que pasaria si ahora juntaramos las branches 'master' y 'test'?
+como test surgio de master y hizo un commit a partir de esa misma base, lo unico que pasaria es que ese commit de test se sumaria a master bajo el nombre de 'fastfoward', porque realmente las branches nunca se bifurcaron en contenido.
+
+esa seria la solucion facil, pero como pusimos advanced en el titulo vamos a hacer un poco mas de desorden.
+
+``` bash
+$ echo 'console.log("estoy en el master")' > hola.js
+
+$ node hola
+
+$ git status
+```
+
+ahora tenemos en *master* unos nuevos cambios que no estan en *test* y en *test* cambios que no estan en *master*. por lo que podemos decir que las branches se bifurcaron,
+
+entonces pensemos, si yo tratara de hacer el merge entre *master* y *test* con cual cambio se deberia quedar git? el archivo quedaria loggeando "estoy en el master" o "modificado".
+
+la respuesta es ninguno, git detectaria un merge conflict y dejaria al usuario seleccionar las lineas de codigo en particular que quiera modificar
+
+veamos como funciona. mergeamos *test* desde *master*
+
+``` bash
+$ git merge test
+```
+
+"CONFLICT (content): Merge conflict in hola.js"
+
+git nos va a avisa del problema y tenemos que pasar nosotros a solucionarlo
+asique veamos el archivo __hola.js__ un poco mas comodo en el sublime
+
+``` bash
+$ subl hola.js
+```
+
+``` javascript
+<<<<<<< HEAD
+console.log('master')
+=======
+console.log('teeeest')
+>>>>>>> test
+```
+
+como veran tengo las dos opciones encerradas por unos simbolos de mayor y menor, estos son los separadores que usa git para avisarte que lineas estan en conflicto
+
+la primera parte es la version que tenemos en el branch en el que estamos parados(en este caso *master*), y la segunda es la version del branch al que pulleamos(*test*)
+
+ahora podemos seleccionar que version queremos que quede y listo
+
+guardamos el archivo commiteamos y terminamos con nuestro merge
+
+``` bash
+$ git add hola.js
+
+$ git commit -m 'merge w/test'
+```
+
+recuerden que master, si bien es la branch principal, es una branch como cualquier otra, y estos pasos pueden ser usados para mergear cualquier branch entre ellas.
+
 
 ## FINALY ##
 
@@ -313,4 +443,5 @@ Usfull links
 Agregar 
 
 * .gitignore
-* merge conflict
+* git log
+* git diff
