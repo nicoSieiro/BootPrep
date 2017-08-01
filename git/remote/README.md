@@ -4,7 +4,7 @@
 
 Para poder colaborar en cualquier proyecto Git, necesitas saber cómo gestionar tus repositorios remotos. __Los repositorios remotos son versiones de tu proyecto que se encuentran alojados en Internet o en algún punto de la red__. Colaborar con otros implica gestionar estos repositorios remotos, y mandar (__push__) y recibir (__pull__) datos de ellos cuando necesites compartir cosas.
 
-Para ver la lista de repositorios remotos en nuestro proyecto podemos hacer `gir remote -v`. 
+Para ver la lista de repositorios remotos en nuestro proyecto podemos hacer `gir remote -v`.
 
 > Si hemos clonado un repo, el lugar de donde lo hayamos clonado aparecerá bajo el nombre de __origin__.
 
