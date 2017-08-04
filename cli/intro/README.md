@@ -40,7 +40,7 @@ Algunas de sus ventajas son:
 
 Un comando esta formado por varias partes:
 
-[imagen ejemplo command]
+![Command Line Interface](../img/command.png)
 
 | Nombre         | Ejemplo                |  
 | -------------- |-----------------------:|
@@ -52,13 +52,14 @@ Un comando esta formado por varias partes:
 * __*Prompt*__ : Da informacion del entorno bajo el que estas trabajando e indica que el shell(terminal) esta listo para recibir un nuevo comando.
 
   > en el bash de los sistemas UNIX se usa el signo $
+
   > en el CMD de Windows se usa el signo >
 
-* __*Command Name*__ : Es logicamente el nombre propio del comando que vamos a usar, es unico y es como el CLI va a reconocer que buscamos hacer
+* __*Command Name*__ : Es logicamente el nombre propio del comando que vamos a usar, es unico y es como el CLI va a reconocer que buscamos hacer. Es el que encabeza el comando.
 
-* __*Flags u Options*__ : Son configuraciones extra que le vamos a dar a nuestro comando, empiezan siempre con uno o dos guiones medios (-) y luego una letra o palabra que represente la opcion especifica que queremos activar.
+* __*Flags u Options*__ : Son configuraciones extra que le vamos a dar a nuestro comando, empiezan siempre con uno o dos guiones medios (-) y luego una letra o palabra que represente la opcion especifica que queremos activar. Puede ir tanto antes como despues del argumento.
 
-* __*Argument*__ Es el parametro al que queremos hacer referencia con nuestro comando.
+* __*Argument*__ Es el parametro al que queremos hacer referencia con nuestro comando. Puede ser mas de uno separados por espacios en blanco.
 
 Por ejemplo 
 
