@@ -2,7 +2,11 @@
 # Command Line Interface
 
 
-## CLI
+## Intro
+
+### Interfaces
+
+#### CLI
 
 Un _**CLI**_ o _**interfaz de línea de comandos**_ es una interfaz basada en texto que le permite al usuario interactuar con el sistema operativo.
 
@@ -12,7 +16,7 @@ Las CLI pueden usarse interactivamente, escribiendo instrucciones en una entrada
 
 ![Command Line Interface](../img/cli.png)
 
-## GUI
+#### GUI
 
 Esta no es la unica interfaz que conocemos, de hecho es la que menos conocemos, la mas usada se llama GUI (_Graphic user interface_) y es el modelo que usa casi todo el software que usamos.
 
@@ -20,7 +24,7 @@ Se compone de una ventana con iconos, botones y menus que te permiten navegar de
 
 ![Graphic User Interface](../img/gui.png)
 
-## CLI vs GUI
+#### CLI vs GUI
 
 Apesar de las ventajas que pueda trater un GUI es muy importante el manejo de interfaces basadas en texto (CLI), porque es la mejor manera de trabajar con la mayoria de los programas y de la manera mas eficiente.
 
@@ -32,20 +36,20 @@ Algunas de sus ventajas son:
   * _**Poderosos**_: Se pueden correr scripts que realicen muchas acciones a la vez.
 
 
-## Anatomia de un comando
+### Anatomia de un comando
 
 Un comando esta formado por varias partes:
 
 [imagen ejemplo command]
 
-| Nombre         | Ejemplo     |  
-| -------------- |------------:|
-| prompt         | $           |
-| command name   | rm          |
-| options / flag | -r          |
-| argument       | carpeta     |
+| Nombre         | Ejemplo                |  
+| -------------- |-----------------------:|
+| prompt         | cafeparatodos@lenovo~$ |
+| command name   | rm                     |
+| options / flag | -r                     |
+| argument       | carpeta                |
 
-* __*Prompt*__ : Indica que el shell(terminal) esta listo para recibir un nuevo comando.
+* __*Prompt*__ : Da informacion del entorno bajo el que estas trabajando e indica que el shell(terminal) esta listo para recibir un nuevo comando.
 
   > en el bash de los sistemas UNIX se usa el signo $
   > en el CMD de Windows se usa el signo >
@@ -66,7 +70,9 @@ $ ls -a  // command + option
 $ rm -r exampleFolder  // command + option + argument
 ```
 
-## Accediendo a la terminal
+### Poniendo en practica
+
+#### Accediendo a la terminal
 
 Ahora vamos a ver un poco como acceder al **shell**,
 
@@ -76,11 +82,11 @@ Si estamos en Linux podemos abrir el prompt de busqueda y escribimos **terminal*
 
 Estando en MacOS Ctrl+Space para abrir el prompt de busqueda y escribimos **terminal**
 
-## Comandos simples
+#### Comandos simples
 
 Hagamos una prueba con algunos comandos clasicos asi nos familiarizamos con su uso.
 
-#### echo
+##### Echo
 
 Empezamos con `echo`, este comando imprime los argumentos que le pasemos en la consola.
 
@@ -91,9 +97,9 @@ $ echo hola plataforma5
 
 > En este caso "hola" y "plataforma5" son argumentos distintos, separados por el espacio, si quisieramos que fuera todo un solo argumento tendriamos que cambiar el comando a `echo "hola plataforma5"`, ambas maneras funcionan.
 
-#### ls
+##### List
 
-Un comando muy util y que van a usar constantemente es `ls`, sirve para listar todas carpetas y archivos de la carpeta en la que estamos parados.
+Un comando muy util y que van a usar constantemente es `ls` (list), sirve para listar todas carpetas y archivos de la carpeta en la que estamos parados.
 
 ``` bash
 $ ls
@@ -102,8 +108,15 @@ $ ls
 ```
 
 > Agregandole `-a` (all) como option pordemos listar los archivos ocultos tambien, o `-l` (list) para obtener mas informacion de los archivos en forma de lista. Combinando ambos tenemos un listado completo de los archivos incluyendo los ocultos `ls -la`, Pruebenlo!
+ 
+Si queremos listar una carpeta mas adentro solo hay que pasarlo como argumento
 
-#### man
+``` bash
+$ ls plataforma5
+# bootcamp    intro     pledu      prep 
+```
+
+##### Manual
 
 Cada comando tiene sus options o flags, pero como podemos saber cuales son?
 para eso podemos usar el commando `man` (manual) que nos dara informacion detallada de cada comando.
@@ -114,9 +127,9 @@ $ man ls
 
 > **Enter** para scrollear en el manual y **q** para salir
 
-#### cd
+##### Change Directory
 
-Todo genial por ahora pero solo estamos trabajando desde la carpeta `home`, para movernos en nuestro disco podemos usar el comando `cd` pasandole como argumento la carpeta a la que querramos acceder.
+Todo genial por ahora pero solo estamos trabajando desde la carpeta `home`, para movernos en nuestro disco podemos usar el comando `cd` (change directory) pasandole como argumento la carpeta a la que querramos acceder.
 
 ``` bash
 $ cd plataforma5
@@ -138,7 +151,7 @@ $ cd ..
 
 > Usando `cd` sin nungun argumento regresamos al home directamente
 
-#### pwd
+##### Print Working Directory
 
 Moviendonos tanto de carpeta puede que quieran saber la direccion de donde estan trabajando, para eso sirve `pwd`
 
