@@ -46,7 +46,7 @@ Un comando esta formado por:
 
 * El command name es como suponen el nombre propio del comando que vamos a usar, es unico y es como el CLI va a saber que queremos hacer
 
-* Los flags o options son configuraciones extra que le vamos a dar a nuestro comando, empiezan siempre con uno o dos guiones medios (-) y luego una letra o palabra que represente la opcion que queremos activar
+* Los flags u options son configuraciones extra que le vamos a dar a nuestro comando, empiezan siempre con uno o dos guiones medios (-) y luego una letra o palabra que represente la opcion que queremos activar
 
 * el argument es el parametro al que queremos hacer referencia con nuestro comando
 
