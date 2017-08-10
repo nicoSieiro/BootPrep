@@ -262,7 +262,20 @@ $ ls carpetaInterior
 
 > Se puede hacer ambas cosas a la vez, cambiar el nombre y mover el archivo, hagan una prueba!
  
-> Algo a tener en cuenta es que si ya existe un archivo con el mismo nombre en su carpeta de destino, este archivo va a ser **pisado** por el que estamos moviendo.
+> Algo a tener en cuenta es que si ya existe un archivo con el mismo nombre en su carpeta de destino, este archivo va a ser **pisado** por el que estamos moviendo. Podemos usar el flag `-i` para que nos pregunte antes de sobre escribir un archivo.
+
+#### copy
+
+De la misma manera que podemos mover archivos también podemos copiarlos.
+`cp` usa el mismo sistema que `mv` y va a sobre escribir los archivos de destino que se llamen igual.
+
+``` bash
+$ cp -i carpetaInterior/modificado.js afuera.js
+$ ls
+# afuera.js
+```
+
+> Si lo que queremos copiar es una carpeta no olviden el flag `-r`(recursive) para también copiar todos los elementos de adentro.
 
 #### cat
 
@@ -271,7 +284,7 @@ Les puede pasar que no estén seguros de que el archivo/carpeta que planean move
 Primero abramos nuestro editor de texto y escribamos algo en un archivo.
 
 ``` bash
-$ cat carpetaInterior/modificado.js
+$ cat afuera.js
 # Lo que sea que se haya escrito en el archivo
 ```
 
