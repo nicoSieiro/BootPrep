@@ -153,8 +153,113 @@
 
   patron para crear funciones
 
-## Prototypal Inheritance
+## PROTOTYPAL INHHERITANCE
 
-## Constructor Functions
+### Prototype Chain
 
-## Functional Programing
+#### que es la propiedad proto
+
+  propiedades de los objetos y donde entran los proto
+
+#### todo es un objeto
+
+  ya se sabia, ahora lo mostramos con los proto
+  linea de herencia hasta Object
+
+#### hasOwnProperty
+
+  solo mira el objeto y no la prototype chain
+
+#### extend
+
+#### `\__proto__` != `prototype`
+
+  Solo para funciones y distinto de proto
+  prototype es un objeto con una unica propiedad constructor
+
+### Constructor Functions
+
+#### objetivo del constructor?
+
+  devolver un objeto nuevo
+
+#### estructura de la función 
+
+  propiedades con `this`
+
+#### `new` keyword
+
+  genera un objeto con las propiedades
+  `instanceof`
+
+### `.prototype` Methods
+
+#### agregar metodos al constructor
+
+  `Object.getPrototypeOf()`
+  updateamos una función y se cambia en la instancia
+
+#### Object.create
+
+  constructor que 'hereda' de otro
+  (tambien puede remplazar el new)
+
+### Clases
+
+#### ES6 clases
+
+  estructura de otro lenguaje (basado en prototypado)
+
+#### estructura
+  
+  ej constructor y funciones
+
+#### class extends
+
+  herencia clasica
+  super
+
+### Programacion Orientada a Objetos
+
+#### paradigma
+
+  introducción a paradigma
+
+#### que es oop?
+
+  encapsulacion de datos en objetos e interacciones entre ellos
+
+#### conceptos basico
+
+  listado de definiciones(clases, objetos, atributos, etc...)
+
+#### diferencias classes prototype
+
+  cuadrito
+
+## FUNCTIONAL PROGRAMING
+
+### Paradigma Funcional
+
+#### funciones puras
+
+  Solo usar argumentos, devolver un nuevo resultado(estado)
+  evitas efectos secundarios
+
+#### datos inmutables
+
+  !! efectos secundarios
+
+#### high order functions
+
+### Usos
+
+#### ejemplo
+
+  ejemplo hacer nuestro propio forEach
+
+#### metodos propios del lenguaje
+
+  Array.map()
+  Array.filter()
+  Array.reduce()
