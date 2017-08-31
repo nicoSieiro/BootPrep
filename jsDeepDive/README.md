@@ -2,264 +2,258 @@
 
 ## OBJETOS Y TIPOS DE DATOS
 
-### Tipos de Datos (repaso corto)
+  ### Tipos de Datos (repaso corto)
 
-#### datos primitivos y datos complejos
-  
-  primitivos: string, number, null, undefined, boolean, symbol
-  complejos: objetos(functions, arreglos, dates, etc)
+  #### datos primitivos y datos complejos
+    
+    primitivos: string, number, null, undefined, boolean, symbol
+    complejos: objetos(functions, arreglos, dates, etc)
 
-#### mutabilidad e inmutabilidad
+  #### mutabilidad e inmutabilidad
 
-  primitivos inmutables (ejemplo str[3]) pasados por valor
-  complejos mutables (ejemplo obj.num) pasador por referencia
+    primitivos inmutables (ejemplo str[3]) pasados por valor
+    complejos mutables (ejemplo obj.num) pasador por referencia
 
-### Estructura de los Objetos (repaso corto)
+  ### Estructura de los Objetos (repaso corto)
 
-#### object literal
+  #### object literal
 
-  estructura rapida, ejemplo
+    estructura rapida, ejemplo
 
-#### keys & values
+  #### keys & values
 
-  que representa el key, condiciones del nombre (ejemplo 'key-con-guion')
-  values como cualquier tipo de dato
+    que representa el key, condiciones del nombre (ejemplo 'key-con-guion')
+    values como cualquier tipo de dato
 
-#### dot & bracket notation 
+  #### dot & bracket notation 
 
-  ejemplo de ambos con un key
-  como paso una variable
-  error obj.key-con-guion > obj[key-con-guion]
+    ejemplo de ambos con un key
+    como paso una variable
+    error obj.key-con-guion > obj[key-con-guion]
 
 ## JAVASCRIPT A FONDO
 
-### Single threaded y Sincrónico
+  ### Syntax Parser 
 
-#### que es un thread?
+    validación de sintaxis
+    comportamientos extra
 
-  secuencia de instrucciones mas pequeña
+  ### Lexical Environment
 
-#### asincronico y no bloqueante (muy por encima)
+    declaración de expresiones o staments varia el resultado según el entorno
 
-### Syntax Parser 
+  ### Execution Context
+    
+    información de donde y como se ejecuta el código
 
-  validación de sintaxis
-  comportamientos extra
+  #### contexto global
 
-### Lexical Environment
+    código corre en contexto, si no especificamos entra en el global
 
- declaración de expresiones o staments varia el resultado según el entorno
+  #### objeto global
 
-### Execution Context
-  
-  información de donde y como se ejecuta el código
+    se crea (window en chrome) y el this(tbd)
+    ejemplo window.variable y window.funcion en la consola
 
-#### contexto global
+  #### hoisting
 
-  código corre en contexto, si no especificamos entra en el global
+    lectura de código
+    reserva de variables sin asignación contra funciones explicitas
 
-#### objeto global
+  ### Execution Stack
 
-  se crea (window en chrome) y el this(tbd)
-  ejemplo window.variable y window.funcion en la consola
+    muchos contextos de ejecución (funciones) crea un stack
+    ejemplo fn a(){b()}
 
-#### hoisting
+  #### scopes
 
-  lectura de código
-  reserva de variables sin asignación contra funciones explicitas
+  ### Asincronico y no Bloqueante
 
-### Execution Stack
+    event loop, callbacks. Videito del chabon.
 
-  muchos contextos de ejecución (funciones) crea un stack
-  ejemplo fn a(){b()}
+  ### Precedencia de Operadores y Asociatividad
 
-#### scopes
+  #### precedencia
+    
+    peso de los operadores
 
-### Asincronico y no Bloqueante
+  #### asociatividad
 
-### Precedencia de Operadores y Asociatividad
+    orden ante la misma precedencia
 
-#### precedencia
-  
-  peso de los operadores
+  ### Coerción de datos
 
-#### asociatividad
-
-  orden ante la misma precedencia
-
-### Coerción de datos
-
-  1+'1'
-  1-'1'
-  console.log(3 < 2 < 1) // true
+    1+'1'
+    1-'1'
+    console.log(3 < 2 < 1) // true
 
 ## FUNCTION AND CLOSURES
 
-### Funciones y Parámetros (rápido)
+  ### Funciones y Parámetros (rápido)
 
-#### funciones como objetos
+  #### funciones como objetos
 
-  que es una función
-  objeto invocable
+    que es una función
+    objeto invocable
 
-#### ejecución y parámetros
+  #### ejecución y parámetros
 
-  argumentos de una funcion (fn.arguments)
-  propiedades como length y name
+    argumentos de una funcion (fn.arguments)
+    propiedades como length y name
 
-#### first class function
+  #### first class function
 
-  porque se puede pasar funciones como parámetro
+    porque se puede pasar funciones como parámetro
 
-#### expression vs stament
+  #### expression vs stament
 
-  ejemplo
+    ejemplo
 
-### Operador 'this'
+  ### Operador 'this'
 
-#### que es this?
+  #### que es this?
 
-#### this y el execution context
+  #### this y el execution context
 
-  nuevamente ejemplo window.variable y window.funcion en la consola
+    nuevamente ejemplo window.variable y window.funcion en la consola
 
-#### como metodo de un objeto
+  #### como metodo de un objeto
 
-  fn a(){console.log(this)}
-  obj.a = a
-  obj.a()
-  ejemplos un poco mas complejos
+    fn a(){console.log(this)}
+    obj.a = a
+    obj.a()
+    ejemplos un poco mas complejos
 
-#### Call
+  #### Call
 
-#### Bind
+  #### Bind
 
-#### Aplly
+  #### Aplly
 
-### Closures
+  ### Closures
 
-#### Immediately invoked functions expressions
+  #### Immediately invoked functions expressions
 
-  no se guarda en el hoisting
-  invocacion + nuevo contexto de ejecución 
+    no se guarda en el hoisting
+    invocacion + nuevo contexto de ejecución 
 
-#### closures
+  #### closures
 
-  nuevo contexto que guarda información
-  contexto destruido al final la función
-  ejemplo arr.push
+    nuevo contexto que guarda información
+    contexto destruido al final la función
+    ejemplo arr.push
 
-#### factory functions
+  #### factory functions
 
-  patron para crear funciones
+    patron para crear funciones
 
 ## PROTOTYPAL INHHERITANCE
 
-### Prototype Chain
+  ### Prototype Chain
 
-#### que es la propiedad proto
+  #### que es la propiedad proto
 
-  propiedades de los objetos y donde entran los proto
+    propiedades de los objetos y donde entran los proto
 
-#### todo es un objeto
+  #### todo es un objeto
 
-  ya se sabia, ahora lo mostramos con los proto
-  linea de herencia hasta Object
+    ya se sabia, ahora lo mostramos con los proto
+    linea de herencia hasta Object
 
-#### hasOwnProperty
+  #### hasOwnProperty
 
-  solo mira el objeto y no la prototype chain
+    solo mira el objeto y no la prototype chain
 
-#### extend
+  #### extend
 
-#### `\__proto__` != `prototype`
+  #### `\__proto__` != `prototype`
 
-  Solo para funciones y distinto de proto
-  prototype es un objeto con una unica propiedad constructor
+    Solo para funciones y distinto de proto
+    prototype es un objeto con una unica propiedad constructor
 
-### Constructor Functions
+  ### Constructor Functions
 
-#### objetivo del constructor?
+  #### objetivo del constructor?
 
-  devolver un objeto nuevo
+    devolver un objeto nuevo
 
-#### estructura de la función 
+  #### estructura de la función 
 
-  propiedades con `this`
+    propiedades con `this`
 
-#### `new` keyword
+  #### `new` keyword
 
-  genera un objeto con las propiedades
-  `instanceof`
+    genera un objeto con las propiedades
+    `instanceof`
 
-### `.prototype` Methods
+  ### `.prototype` Methods
 
-#### agregar metodos al constructor
+  #### agregar metodos al constructor
 
-  `Object.getPrototypeOf()`
-  updateamos una función y se cambia en la instancia
+    `Object.getPrototypeOf()`
+    updateamos una función y se cambia en la instancia
 
-#### Object.create
+  #### Object.create
 
-  constructor que 'hereda' de otro
-  (tambien puede remplazar el new)
+    constructor que 'hereda' de otro
+    (tambien puede remplazar el new)
 
-### Clases
+  ### Clases
 
-#### ES6 clases
+  #### ES6 clases
 
-  estructura de otro lenguaje (basado en prototypado)
+    estructura de otro lenguaje (basado en prototypado)
 
-#### estructura
-  
-  ej constructor y funciones
+  #### estructura
+    
+    ej constructor y funciones
 
-#### class extends
+  #### class extends
 
-  herencia clasica
-  super
+    herencia clasica
+    super
 
-### Programacion Orientada a Objetos
+  ### Programacion Orientada a Objetos
 
-#### paradigma
+  #### paradigma
 
-  introducción a paradigma
+    introducción a paradigma
 
-#### que es oop?
+  #### que es oop?
 
-  encapsulacion de datos en objetos e interacciones entre ellos
+    encapsulacion de datos en objetos e interacciones entre ellos
 
-#### conceptos basico
+  #### conceptos basico
 
-  listado de definiciones(clases, objetos, atributos, etc...)
+    listado de definiciones(clases, objetos, atributos, etc...)
 
-#### diferencias classes prototype
+  #### diferencias classes prototype
 
-  cuadrito
+    cuadrito
 
 ## FUNCTIONAL PROGRAMING
 
-### Paradigma Funcional
+  ### Paradigma Funcional
 
-#### funciones puras
+  #### funciones puras
 
-  Solo usar argumentos, devolver un nuevo resultado(estado)
-  evitas efectos secundarios
+    Solo usar argumentos, devolver un nuevo resultado(estado)
+    evitas efectos secundarios
 
-#### datos inmutables
+  #### datos inmutables
 
-  !! efectos secundarios
+    !! efectos secundarios
 
-#### high order functions
+  #### high order functions
 
-### Usos
+  ### Usos
 
-#### ejemplo
+  #### ejemplo
 
-  ejemplo hacer nuestro propio forEach
+    ejemplo hacer nuestro propio forEach
 
-#### metodos propios del lenguaje
+  #### metodos propios del lenguaje
 
-  Array.map()
-  Array.filter()
-  Array.reduce()
+    Array.map()
+    Array.filter()
+    Array.reduce()
