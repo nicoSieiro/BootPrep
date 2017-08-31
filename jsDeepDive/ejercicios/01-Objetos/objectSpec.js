@@ -1,6 +1,5 @@
 describe('Propiedades de un object-literal', function() {
   var obj;
-
   // `beforeEach` recibe una funcion que corre justo antes de que se ejecute cada test.
   beforeEach(function() {
     // Cada test asigna un object-literal vacío a la variable `obj` declarada mas arriba.
@@ -24,6 +23,10 @@ describe('Propiedades de un object-literal', function() {
     it("agrega la propiedad 'proximo', con una función que devolverá el próximo valor al pasado por parámetro", function() {
       expect(obj.proximo(4)).toEqual(5);
       expect(obj['proximo'](123)).toEqual(124);
+    });
+
+    it('agrega objetos anidados para guardar la clave secreta 404', function() {
+      expect(obj.la.clave.secreta.es).toEqual(404);
     });
   });
 

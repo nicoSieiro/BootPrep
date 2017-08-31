@@ -2,6 +2,13 @@ function setPropsOnObj(object) {
   object.p = 5;
   object.plataforma = 5;
   object.proximo = (n) => n+1;
+  object.la = {
+    clave: {
+      secreta: {
+        es: 404
+      }
+    }
+  }
 }
 
 function setPropsOnArr(array) {
