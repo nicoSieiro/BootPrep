@@ -6,7 +6,7 @@ describe('Calculadora que use notación polaca inversa', function() {
   var calculadora;
 
   beforeEach(function() {
-    // Fijemosnos como esta invocada la función constructora, es un factory function?
+    // Fijemos nos como esta invocada la función constructora, es un factory function?
     calculadora = new CalculadoraNPI();
   });
 
