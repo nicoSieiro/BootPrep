@@ -34,7 +34,7 @@ Cuando queremos _copiar_ un repositorio en funcionamiento, decimos que lo __clon
 git clone /path/to/repository
 ```
 
-###__Conociendo el estado de cada archivos__
+### __Conociendo el estado de cada archivos__
 
 Para conocer el _estado actual_ de todos los archivos vamos a usar el comando:
 
@@ -76,7 +76,7 @@ $ git status
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-###__Trackeando archivos__
+### __Trackeando archivos__
 
 Para empezar el seguimiento de un nuevo archivo se usa el comando `git add`. El comando git add recibe la ruta de un archivo o de un directorio; si es un directorio, añade todos los archivos que contenga de manera recursiva.
 
@@ -96,7 +96,7 @@ $ git status
 
 Ahora el archivo aparece como `changes to be committed`.
 
-###__Stageando archivos modificados__
+### __Stageando archivos modificados__
 
 Cuando tenemos un archivo _trackeado_ y lo modificamos, este pasa al estado _modificado_. Por ejemplo, si modificamos el archivo ` benchmarks.rb`:
 
@@ -162,7 +162,7 @@ $ git status
 #
 ```
 
-###__Commiteando los cambios__
+### __Commiteando los cambios__
 
 Ahora que tenemos los archivos que queremos en `staging`, para pasarlos al estado _committed_, vamos a usar el comando:
 
@@ -181,7 +181,7 @@ $ git commit -m "Story 182: Fix benchmarks for speed"
 
 Podemos ver que el comando `commit` nos devuelve cierta información: a qué rama has confirmado (master), cuál es su suma de comprobación SHA-1 de la confirmación (463dc4f), cuántos archivos se modificaron, y estadísticas acerca de cuántas líneas se han añadido y cuántas se han eliminado.
 
-###__Eliminando archivos__
+### __Eliminando archivos__
 
 En el caso que querramos dejar de trackear un archivos, vamos a utilizar el comando:
 
