@@ -3,6 +3,8 @@
 
 # Java Script Deep Dive
 
+En este modulo vamos a trabajar no solo con teoria, le vamos a agregar ejercicios para que ustedes hagan y puedan testear.
+
 * [Usando Test](./00-ProbandoTests/)
 * [Tipos de Datos y Objetos (Repaso)](./01-Objetos/)
 * [JavaScript Teorico](./02-jsTeorico)

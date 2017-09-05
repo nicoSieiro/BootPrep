@@ -18,28 +18,48 @@ $ git config --global user.email juan@perez.com
 
 > Pueden ver más configuraciones iniciales [aquí](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
 
-## Operaciones Básicas
+## Usando Git
 
-__Crear un repo nuevo__: Para inicializar un directorio como un repo de git, tenemos que posicionarnos en el directorio deseado (generalmente vamos a crear una carpeta nueva), y ahí hacer el siguiente comando:
+Vamos a poner en practica los conceptos de _git_ con un poco de ejemplos.
 
-```
-git init
-```
+Tengo una pequeña carpeta con 4 archivos, un _html_, un _css_ y dos _js_.
+sobre esta carpeta vamos a trabajar.
 
-Esto crea un nuevo subdirectorio llamado .git que contiene todos los archivos necesarios para la creación del repositorio. Todavía no hay nada en tu proyecto que esté bajo seguimiento.
-
-Cuando queremos _copiar_ un repositorio en funcionamiento, decimos que lo __clonamos__, de hecho, git _copia_ todo el contenido en nuestro disco local. Para hacerlo hacemos:
-
-```
-git clone /path/to/repository
+Uso `ls` para revisar que hay en la carpeta que estoy parado.
+``` bash
+$ ls
+# index.html  index.js  style.css  utils.js
 ```
 
-### __Conociendo el estado de cada archivos__
+Tengo mis archivos, entonces inicialicemos la carpeta como un repositorio de git (podríamos hacerlo aunque la carpeta este vacía).
 
-Para conocer el _estado actual_ de todos los archivos vamos a usar el comando:
-
+``` bash
+$ git init
+# Initialized empty Git repository in /home/cafeparatodos/plataforma5/prep/git/local/test/.git/
 ```
-git status
+
+Excelente! nos dice que se creo el repositorio, ¿que implica eso? que se creo una carpeta oculta `.git` con todos los archivos y configuraciones propias de nuestro repositorio.
+
+### __Estado de los archivo__
+
+El comando `git status` nos va a permitir ver el estado actual de nuestros archivos y el repositorio en si (branch y commits). Va a ser uno de los comandos mas usados, es clave poder tener una instantánea del estado porque casi todo comando de git lo afecta y modifica.
+
+``` bash
+$ git status
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#   index.html
+#   index.js
+#   style.css
+#   utils.js
+#
+# nothing added to commit but untracked files present (use "git add" to track)
+
 ```
 
 Un archivo puede pasar por alguno de estos estados del ciclo de vida:
@@ -53,152 +73,160 @@ Un archivo puede pasar por alguno de estos estados del ciclo de vida:
 
 > Cualquier archivo que este en un estado _unmodified_, _modified_ o _stages_, decimos que es un archivo que está __trackeado__.
 
-Ejemplos:
+Entonces ¿Que información podemos sacar de este _output_?
 
-Todos nuestros archivos están en estado _Unmodified_, por ejemplo cuando recién clonamos un repo:
+Sabemos que estamos en la _branch_ master (no se preocupen por esto ahora) y como podemos ver todos los archivo están en la tabla de __*untracked files*__ , porque hasta ahora nunca le dijimos a git que los tenga en cuenta. Para cambiar eso vamos a usar un nuevo comando `git add`.
 
+### __Pasando archivos al Stagin Area__
+
+``` bash
+$ git add index.html
 ```
+
+Vemos que al parecer no paso nada porque no hay output, pero en realidad el archivo `index.html` fue agregado al `staging area`. Se tomo la versión actual del archivo agregado y se guardo una copia de este en el listado de archivos listos para commitear.
+
+Si volvemos a correr `git status` vamos a ver el cambio.
+
+``` bash
 $ git status
 # On branch master
-nothing to commit, working directory clean
-```
-
-Creamos un archivo nuevo llamado `Readme`. El estado que tiene es `untracked`:
-
-```
-$ vim README     <- creamos un archivo y lo guardamos
-$ git status
-# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#   new file:   index.html
+#
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
-#   README
-nothing added to commit but untracked files present (use "git add" to track)
+#   index.js
+#   style.css
+#   utils.js
 ```
 
-### __Trackeando archivos__
+`index.html` aparece en la lista de 'Changes to be committed', pero el resto sigue sin estar trackeados, podríamos solucionar eso agregando uno a uno los archivos, o podríamos indicarle que agregue todos los archivos pendientes (suponiendo que queremos conservar todos los cambios).
 
-Para empezar el seguimiento de un nuevo archivo se usa el comando `git add`. El comando git add recibe la ruta de un archivo o de un directorio; si es un directorio, añade todos los archivos que contenga de manera recursiva.
 
-Por ejemplo, Iniciaremos el seguimiento del archivo README ejecutando esto:
-
+``` bash
+$ git add .
 ```
-$ git add README
 
+Uso `git add .` para agregar todos los archivos, fíjense que uso el `.` para agregar todos los archivos de **la carpeta en la que estoy parado**, si estuviera parado en una carpeta mas adentro y quisiera agregar todos los archivos del repositorio y no solo esa carpeta puedo usar el asterisco `*`.
+
+``` bash
 $ git status
 # On branch master
+#
+# Initial commit
+#
 # Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
+#   (use "git rm --cached <file>..." to unstage)
 #
-#   new file:   README
-#
+#   new file:   index.html
+#   new file:   index.js
+#   new file:   style.css
+#   new file:   utils.js
 ```
 
-Ahora el archivo aparece como `changes to be committed`.
+Ahora que vemos que todos nuestros cambios están en el stagin area listos para commitear vamos a guardarlos en la base de datos local.
 
-### __Stageando archivos modificados__
+El comando de commit recibe un flag `-m` de _message_ y un argumento que indica cual es el mensaje que se le asigna al commit explicando cuales fueron los cambios.
 
-Cuando tenemos un archivo _trackeado_ y lo modificamos, este pasa al estado _modificado_. Por ejemplo, si modificamos el archivo ` benchmarks.rb`:
+### __Guardando nuestros cambios__
 
+``` bash
+$ git commit -m "testing commit"
+# [master (root-commit) a267c95] testing commit
+#  4 files changed, 18 insertions(+)
+#  create mode 100644 index.html
+#  create mode 100644 index.js
+#  create mode 100644 style.css
+#  create mode 100644 utils.js
 ```
-$ vim  benchmarks.rb  <-- modificamos el archivo y guardamos 
+
+4 archivos fueron cambiados y 18 'insertions' (indica cuantas lineas se modificaron) dice en nuestro output por lo el commit fue exitoso. Hay bastante información que pueden sacar de las respuestas de git, con la practica van a llegar a entender todos las posibles opciones.
+
+Ahora que guardamos esta versión de nuestro programa, ¿Cual es el estado de git?
+
+``` bash
 $ git status
 # On branch master
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#   new file:   README
-#
+# nothing to commit, working directory clean
+```
+
+Lógicamente no hay cambios que no hayamos guardado por lo que no tenemos nada para commitear, ni archivos modificados.
+
+Hasta ahora vimos archivos _untracked_ y archivos creados (_new file_), ahora modifiquemos alguno para ver el estado, _modified_.
+
+> Entren con sublime y modifiquen el string del `console.log()` de index.js
+
+``` bash
+$ git status
+# On branch master
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#   modified:   benchmarks.rb
+#   modified:   index.js
+#
+# no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Vemos que aparece en `changes not staged for commit`. Para pasar este archivo al área de preparación o siplemente a `staging` usamos también `git add`:
+Ahora `index.js` aparece como un archivo modificado, podríamos agregarlo con `git add index.js`, pero ¿qué pasa si nos arrepentimos de esos cambios y queremos volver al estado del commit anterior? La respuesta esta en el output anterior, vamos a usar `git checkout` 
 
+### __Borrando cambios y archivos__
+
+``` bash
+$ git checkout index.js
 ```
-$ git add benchmarks.rb
+
+Si no tenemos output entonces todo salio bien! Veamos como esta el estado de nuestro repositorio.
+
+``` bash
+$ git status
+# On branch master
+# nothing to commit, working directory clean
+```
+
+Ya no hay cambios, entonces revisen el archivo que modificaron, debería haber vuelto a la versión anterior.
+
+El hecho de que git pueda modificar archivos y llevarlos a la versiones anteriores es gracias a que guarda cada commit de el repositorio, esto lo hace muy poderoso porque siempre vamos a poder volver a distintas instancias de nuestro programa sin problemas.
+
+Pero pensándolo mejor no quiero ni la versión anterior de este archivo, quiero borrarlo así que voy a usar el comando `git rm index.js`
+
+``` bash
+$ git rm index.js
+# rm 'index.js'
+```
+
+El archivo ya no esta mas en nuestra carpeta
+
+``` bash
+$ ls
+# index.html  style.css  utils.js
+```
+
+¿Y en git?
+
+``` bash
 $ git status
 # On branch master
 # Changes to be committed:
 #   (use "git reset HEAD <file>..." to unstage)
 #
-#   new file:   README
-#   modified:   benchmarks.rb
+#   deleted:    index.js
 #
 ```
 
-Ambos archivos están ahora preparados y se incluirán en tu próxima confirmación. Supón que en este momento recuerdas que tenías que hacer una pequeña modificación en benchmarks.rb antes de confirmarlo. Lo vuelves abrir, haces ese pequeño cambio, y ya estás listo para confirmar. Sin embargo, si vuelves a ejecutar git status verás lo siguiente:
+Vemos que hay nuevo tipo de estado, el _deleted_, que indica cuando un archivo fue borrado, para que esto pase a nuestra próxima versión vamos a tener que commitearlo.
 
-```
-$ vim benchmarks.rb
-$ git status
-# On branch master
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#   new file:   README
-#   modified:   benchmarks.rb
-#
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#
-#   modified:   benchmarks.rb
-#
-```
+>Noten que no tengo que agregarlo con `git add`, esa es la diferencia entre hacer `git rm` o solo `rm` con la consola.
 
-¿Pero qué...? Ahora benchmarks.rb aparece listado como preparado y como no preparado. ¿Cómo es posible? Resulta que Git prepara un archivo tal y como era en el momento de ejecutar el comando git add. Si haces git commit ahora, la versión de benchmarks.rb que se incluirá en la confirmación será la que fuese cuando ejecutaste el comando git add, no la versión que estás viendo ahora en tu directorio de trabajo. Si modificas un archivo después de haber ejecutado git add, tendrás que volver a ejecutar git add para preparar la última versión del archivo:
-
-```
-$ git add benchmarks.rb
-$ git status
-# On branch master
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#   new file:   README
-#   modified:   benchmarks.rb
-#
-```
-
-### __Commiteando los cambios__
-
-Ahora que tenemos los archivos que queremos en `staging`, para pasarlos al estado _committed_, vamos a usar el comando:
-
-```
-git commit -m '{mensaje del commit}'
-```
-
-Cada `commit` nos obliga a ingresar un mensaje, este debería ser descriptivo sobre qué cambios se introdujeron en ese commit, de tal manera que en el caso que quieras volver atrás puedas hacerlo rápidamente.
-
-```
-$ git commit -m "Story 182: Fix benchmarks for speed"
-[master]: created 463dc4f: "Fix benchmarks for speed"
- 2 files changed, 3 insertions(+), 0 deletions(-)
- create mode 100644 README
-```
-
-Podemos ver que el comando `commit` nos devuelve cierta información: a qué rama has confirmado (master), cuál es su suma de comprobación SHA-1 de la confirmación (463dc4f), cuántos archivos se modificaron, y estadísticas acerca de cuántas líneas se han añadido y cuántas se han eliminado.
-
-### __Eliminando archivos__
-
-En el caso que querramos dejar de trackear un archivos, vamos a utilizar el comando:
-
-```
-git rm
-```
-
-Por ejemplo:
-
-```
-$ rm grit.gemspec
-$ git status
-# On branch master
-#
-# Changes not staged for commit:
-#   (use "git add/rm <file>..." to update what will be committed)
-#
-#       deleted:    grit.gemspec
-#
+``` bash
+$ git commit -m 'index.js deleted'
+# [master f97ee24] index.js deleted
+#  1 file changed, 3 deletions(-)
+#  delete mode 100644 index.js
 ```
