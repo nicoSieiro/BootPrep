@@ -3,12 +3,15 @@
 
 # Java Script Deep Dive
 
-* [Objetos y Tipos de Datos](./objetos)
-* [JavaScript Teorico](./jsTeorico)
-* [Functions and Closures](./functions)
-* [Prototypal Inheritance](./prototype)
-* [Functional Programing](./functional)
-* [Recursion](./recursion)
+* [Usando Test](./00-ProbandoTests/)
+* [Tipos de Datos y Objetos (Repaso)](./01-Objetos/)
+* [JavaScript Teorico](./02-jsTeorico)
+* [Intro a Functions](./03-Funciones1)
+* [Advanced Functions and Closures](./04-Funciones2)
+* [Constructores](./05-Constructores)
+* [Prototypal Inheritance](./06-Prototype)
+* [Functional Programing](./07-ParadigmaFunctional)
+* [Recursion](./08-Recursion)
 
 ### Lectura Adicional
 

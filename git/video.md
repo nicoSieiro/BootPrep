@@ -89,7 +89,6 @@ Sabiendo esto, el flujo de trabajo básico en Git sería algo así:
 * Commiteas o Confirmas los cambios, lo que toma los archivos tal y como están en el Stagin Area, y almacena esas instantáneas de manera permanente en tu directorio de Git tambien llamado repositorio.
 
 
-
 # GIT LOCAL
 
 Antes que nada voy a empezar a trabajar como si todos tuvieran instalado git.

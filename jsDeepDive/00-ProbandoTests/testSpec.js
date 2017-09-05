@@ -3,7 +3,7 @@ describe('Función `saludar`', function() {
   // tiene que poder superar los test planteados a continuación.
   it('Debería saludar', function() {
     // En este `spec` o test pedimos que al llamar a la función `saludar`
-    // el resultado sea igual (.toEqual) al string 'Hola!'.
+    // el resultado sea igual (.toEqual) al string 'Hola!', osea que retorne 'Hola!'.
     expect(saludar()).toEqual('Hola!');
   });
 
@@ -29,8 +29,8 @@ describe('Función `sumar`', function(){
   });
 
   it('sumando 7 y 8, debería dar 15', function(){
+    
     valor += sumar(7, 8);
-
     expect(valor).toEqual(15);
   });
 })

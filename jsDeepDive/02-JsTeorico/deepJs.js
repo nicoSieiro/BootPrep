@@ -1,3 +1,8 @@
+
+// NO TOCAR ESTE ARCHIVO
+
+// VAYAN DIRECTO A LOS TEST
+
 function scopes() {
   var a = 'hola'
   function otroScope() {
@@ -47,3 +52,8 @@ function boolean(bool) {
 
   }
 }
+
+
+// NO TOCAR ESTE ARCHIVO
+
+// VAYAN DIRECTO A LOS TEST
