@@ -1,12 +1,18 @@
 
 ## Tipos de Datos
 
-### Dato primitivos y datos complejos
+### Static Typing vs Dynamic Typing
 
-JavaScript tiene 6 tipos de datos nativos: 
+Todos los lenguajes de programación tienen características distintas que los caracterizan. Una de ellas es la forma con la que trabajan con variables y tipos de datos. JavaScript en particular tiene lo que se conoce como `tipado dinámico` o `dynamic typing`. Esto quiere decir que no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por si mismo. En otros lenguajes, al declarar una variable tenemos que avisarle qué tipos de datos vamos a guardar en ella (`static typing` o `tipado estático`). Otra cosa importante, es que JavaScript nos permite __cambiar__ el tipo de datos que guardamos en una variable, por ejemplo, podemos tener una variable con un número y luego guardar una string en la misma variable, en otros lenguajes hacer esto nos resultaría en un error.
 
-* _String_: 'Plataforma'.
-* _Number_: 5.
+> Cuando queremos convertir algo de un tipo de datos a otro, usamos el termino _castear_.
+
+### Dato Nativos y Datos Complejos
+
+JavaScript tiene 6 tipos de datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: 
+
+* _String_: Una secuencia de caractéres.
+* _Number_: Representa un numero real.
 * _Undefined_: Valor no definido.
 * _Null_: Valor nulo, tiene mas peso que `undefined`.
 * _Boolean_: `true` o `false`.
