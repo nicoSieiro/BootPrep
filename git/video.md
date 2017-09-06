@@ -420,27 +420,3 @@ $ git commit -m 'merge w/test'
 ```
 
 recuerden que master, si bien es la branch principal, es una branch como cualquier otra, y estos pasos pueden ser usados para mergear cualquier branch entre ellas.
-
-
-## FINALY ##
-
-Tenes que sentirte comodo con:
-
-* crear un repositorio local y vincularlo a uno remoto
-* poder guardar tus cambios bajo el sistema de commits de git
-* poder enviar esos cambios a tu remoto
-* poder traer versiones actualizadas del repositorio remoto
-
-
-## MAS INFORMACION/PARA AGREGAR ##
-
-Usfull links
-
-* [GitHub CheatSheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
-* [git rebase](https://help.github.com/articles/about-git-rebase/)
-
-Agregar 
-
-* .gitignore
-* git log
-* git diff

@@ -1,12 +1,24 @@
 
 ### Code Ramp - Plataforma 5
 
+
 # Command Line Interface
 
 * [Teoria Introductoria](./intro)
 * [Comandos Simples](./comandos)
-* [Comandos Compuestos](./compuestos)
 
+### Al finalizar
+
+Tenes que sentirte cómodo con:
+
+* Navegar por carpetas de tu directorio
+* Crear y borrar archivos
+* Crear y borrar carpetas
+* Diferenciar entre un flag, un comando o un argumento
+
+### Puntos avanzados
+
+* [Comandos Compuestos](./compuestos)
 
 ### Lectura Adicional
 

@@ -7,23 +7,12 @@ Según el SO que tengan, para instalar git sigan una de las siguientes instrucci
 * [Windows](https://git-for-windows.github.io/)
 * [Osx y Linux](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-## Configurando Git
-
-Podemos hacer varias configuraciones iniciales a Git, en general la más importante es configurar nuestra identidad, para eso hacemos:
-
-```
-$ git config --global user.name "Juan Perez"
-$ git config --global user.email juan@perez.com
-```
-
-> Pueden ver más configuraciones iniciales [aquí](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
-
 ## Usando Git
 
 Vamos a poner en practica los conceptos de _git_ con un poco de ejemplos.
 
-Tengo una pequeña carpeta con 4 archivos, un _html_, un _css_ y dos _js_.
-sobre esta carpeta vamos a trabajar.
+Hay una carpeta llamada `test` con 4 archivos, un _html_, un _css_ y dos _js_.
+sobre esta carpeta vamos a trabajar, así que abramos la consola en esa direccion.
 
 Uso `ls` para revisar que hay en la carpeta que estoy parado.
 ``` bash

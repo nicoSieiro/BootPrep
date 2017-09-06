@@ -68,4 +68,4 @@ Si estamos en Linux podemos abrir el prompt de búsqueda y escribimos **terminal
 
 Estando en MacOS Ctrl+Space para abrir el prompt de búsqueda y escribimos **terminal**
 
-Ahora podemos pasar al siguiente topic y empezar a trabajar
+Ahora podemos pasar al siguiente topic y empezar a trabajar.

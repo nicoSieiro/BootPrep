@@ -1,5 +1,5 @@
-### Code Ramp - Plataforma 5
 
+### Code Ramp - Plataforma 5
 
 
 # Git & GitHub
@@ -7,6 +7,17 @@
 * [Introduccion a Git y control de versiones(VCS)](./intro)
 * [Instalando Git + Git local](./local)
 * [Git remoto](./remote)
+* [Advanced Git](./advanced)
+
+
+### Al finalizar
+
+Tenes que sentirte cómodo con:
+
+* Crear un repositorio local y vincularlo a uno remoto
+* Guardar tus cambios bajo el sistema de commits de git
+* Enviar esos cambios a tu remoto
+* Traer versiones actualizadas del repositorio remoto
 
 ### Lectura Adicional
 
