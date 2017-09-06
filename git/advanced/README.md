@@ -15,6 +15,8 @@ Arrancamos como veníamos haciendo para todos los módulos anteriores a trabajar
 Vamos a usar el comando `git branch` para listar las branches existentes en nuestro repositorios.
 
 ``` bash
+$ git init
+
 $ git branch
 ```
 
