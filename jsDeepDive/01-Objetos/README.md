@@ -1,6 +1,4 @@
 
-Logo p5
-
 ## Tipos de Datos
 
 ### Dato primitivos y datos complejos
