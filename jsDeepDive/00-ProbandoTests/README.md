@@ -4,7 +4,7 @@ Un test es un programa que valida que algún otro programa o script realice las 
 
 Constantemente estamos probando si nuestro código funciona como debería de manera manual, la idea de un test es que se realicen automáticamente y a partir de ellos poder modificar o agrandar nuestra trabajo sin arruinar las funcionalidades que ya estaban implementadas.
 
-Siempre que hagamos un test vamos a buscar la operación mas pequeña o básica de cada función y asegurarnos que la cumpla.
+> Siempre que hagamos un test vamos a buscar la operación mas pequeña o básica de cada función y asegurarnos que la cumpla.
 
 Un test manual podría ser del estilo:
 
@@ -14,12 +14,9 @@ function suma(a, b) {
   return a + b;
 }
 
-// y las siguientes variables
-var x = 1,
-    y = 2;
-
-// Ejecutando suma con `x` e `y` como argumento
-var result = suma(x, y);
+// TEST:
+// Ejecutando suma con `1` y `2` como argumento
+var result = suma(1, 2);
 
 // el resultado debería ser 3
 console.log(result === 3)
@@ -35,7 +32,7 @@ Para correr los test a lo largo del prep vamos a necesitar instalar un par de pr
 
 ### NodeJS
 
-Node es un motor de JavaScript que nos va a permitir correrlo fuera de la consola, por ahora no se preocupen mucho por que hace, lo vamos a ver mas adelante.
+Node es un motor de JavaScript que nos va a permitir correrlo fuera del browser, por ahora no se preocupen mucho por que hace, lo vamos a ver mas adelante.
 
 Para instalar Node vamos a ir a su [pagina](https://nodejs.org/en/) y seguir las instrucciones según el sistema operativo que estés usando.
 
