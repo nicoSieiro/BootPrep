@@ -1,4 +1,6 @@
 
+![Plataforma 5](./img/plataforma5.png)
+
 ### Code Ramp - Plataforma 5
 
 
