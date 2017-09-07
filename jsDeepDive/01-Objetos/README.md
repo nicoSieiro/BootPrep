@@ -54,7 +54,7 @@ Probemoslo en la consola del browser.
 
 Un valor __*mutable*__, se imaginaran, se refiere a los elementos que pueden ser modificados sin tener que cambiar el elemento en sí.
 
-##### Los valores mutable son todos los tipos de datos complejos de JS.
+#### Los valores mutable son todos los tipos de datos complejos de JS.
 
 ``` javascript
 // creo un objeto en la variable `obj`
@@ -82,7 +82,7 @@ Un valor __*mutable*__, se imaginaran, se refiere a los elementos que pueden ser
 
 ## Estructura de los Objetos
 
-##### Object literal
+### Object literal
   
 Los objetos son el tipo de datos mas usados en JavaScript, son estructuras no ordenadas de propiedades y valores.
 Cuando declaramos uno con su estructura completa los llamamos object literals.
@@ -95,7 +95,7 @@ var obj = {
 }
 ```
 
-##### Keys & Values
+### Keys & Values
 
 Un Objeto se estructura por una dupla de `keys` y `values` que almacenan información.
 
@@ -123,7 +123,7 @@ var obj = {
 El _value_ de la propiedad puede ser cualquier tipo de dato, por eso si van a escribir un _string_ no se olviden de las comillas.
 
 
-##### Dot & Bracket notation 
+### Dot & Bracket notation 
 
 Hay dos formas de acceder a las propiedades de un objeto
 
