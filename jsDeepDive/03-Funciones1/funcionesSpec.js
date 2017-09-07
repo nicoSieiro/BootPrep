@@ -1,7 +1,6 @@
 // En este ejercicio vamos a tener que hacer una función que cree un objeto
 // que funcione como calculadora. 
-// Para eso vamos a usar el patrón de diseño `factory functions` que crea
-// y retorna un objeto con la estructura que le planteamos
+// La función va a tener que retornar el objeto a usar.
 
 describe("Funciones ", function() {
   var calculadora;
