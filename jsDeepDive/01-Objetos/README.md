@@ -80,9 +80,6 @@ Un valor __*mutable*__, se imaginaran, se refiere a los elementos que pueden ser
 < 'toni'
 ```
 
-primitivos inmutables (ejemplo str[3]) pasados por valor
-complejos mutables (ejemplo obj.num) pasador por referencia
-
 ## Estructura de los Objetos
 
 ##### Object literal
