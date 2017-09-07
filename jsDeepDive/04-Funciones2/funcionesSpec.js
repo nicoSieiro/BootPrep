@@ -72,10 +72,9 @@ describe('invocacionUnica', function() {
   });
 });
 
-// Ahora veamos uno de los conceptos más difíciles de funciones, los `Clousures`.
 // Creemos una función que retorne un objeto con las propiedades descriptas más
 // abajo, ¿porque usaríamos clousures para esto? porque no esta permitido guardar
-// guardar nada mas que esos métodos.
+// nada mas que esos métodos.
 // ¿Podríamos generar un entorno cerrado del cual leer y modificar información?
 describe('Contextos compartidos', function() {
   var obj;
