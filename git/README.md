@@ -6,13 +6,13 @@
 
 # Git & GitHub
   
-* [Introduccion a Git y control de versiones(VCS)](./intro)
+* [Introducción a Git y control de versiones(VCS)](./intro)
 * [Instalando Git + Git local](./local)
 * [Git remoto](./remote)
 * [Advanced Git](./advanced)
 
 
-### Al finalizar
+### Objetivo
 
 Tenes que sentirte cómodo con:
 

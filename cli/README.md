@@ -6,10 +6,10 @@
 
 # Command Line Interface
 
-* [Teoria Introductoria](./intro)
+* [Teoría Introductoria](./intro)
 * [Comandos Simples](./comandos)
 
-### Al finalizar
+### Objetivo
 
 Tenes que sentirte cómodo con:
 
@@ -25,6 +25,6 @@ Tenes que sentirte cómodo con:
 ### Lectura Adicional
 
 * [UNIX CLI CheatSheet](https://en.wikipedia.org/wiki/List_of_Unix_commands)
-* [Curso basico CLI](https://www.codecademy.com/learn/learn-the-command-line)
+* [Curso básico CLI](https://www.codecademy.com/learn/learn-the-command-line)
 * [Brace Expansion](http://www.linuxjournal.com/article/7385)
 
