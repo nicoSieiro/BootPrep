@@ -75,10 +75,10 @@ La operación a comprobar, que da la naturaleza de test, esta en los __*expect*_
 
 Cada vez que hayamos terminado con nuestras funciones, o cuando quieran empezar a probar los test, párense en la consola, justo en la carpeta que quieran probar y corran el comando `$ testem`.
 
-[imagen comando]
+![comando](../img/command.png)
 
 Luego de un momento vamos a ver que `Waiting for runners...` aparece en nuestra pantalla, eso significa que ya tenemos el servicio de testem corriendo y lo podemos acceder entrando a `localhost:7357`. 
 
-[imagen testem]
+![testem](../img/testem.png)
 
 Una vez que todas sus funciones estén bien testeadas pueden seguir adelante con los ejercicios.
