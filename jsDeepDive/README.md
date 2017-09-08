@@ -7,7 +7,7 @@
 
 En este modulo vamos a trabajar no solo con teoria, le vamos a agregar ejercicios para que ustedes hagan y puedan testear.
 
-Van a tener que `clonar` este repositorio usando [_git_](../git) y 
+Van a tener que `clonar` este repositorio usando [_git_](../git) y trabajarlo en su editor de texto. Vayan en orden y lean primero el README.md! (se ve mejor en el browser)
 
 * [Usando Test](./00-ProbandoTests/)
 * [Tipos de Datos y Objetos (Repaso)](./01-Objetos/)
