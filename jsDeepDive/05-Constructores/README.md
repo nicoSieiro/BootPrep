@@ -8,7 +8,7 @@ Cuando trabajamos en _JavaScript_ los conceptos de herencia son distintos a los 
 
 En lo que a herencia se refiere, JavaScript sólo tiene una estructura: objetos. Cada objeto tiene un enlace interno a otro objeto: su __*prototype*__. Ese objeto _prototype_ tiene su propio _prototype_, y así sucesivamente hasta que se alcanza un objeto cuyo _prototype_ es `null`. Por definición, `null` no tiene _prototype_, y actúa como el final de esta cadena de prototipos (_Prototype Chain_).
 
-Si queremos ver estos _prototypes_ podemos encontrarlos en la propiedad `\__proto__`. Prueben el siguiente codigo en la consola.
+Si queremos ver estos _prototypes_ podemos encontrarlos en la propiedad `__proto__`. Prueben el siguiente codigo en la consola.
 
 ``` javascript
 > var a = [1,2,3]
@@ -112,11 +112,11 @@ El metodo `hasOwnProperty` nos permite saber si la propiedad es del objeto o si 
 
 ### Constructor Functions
 
-Vimos como funciona la propiedad _proto_ y que contiene un vinculo que los relaciona al siguiente elemento de la `prototype chain`, pero si analizamos una función podemos ver que hay una variable `prototype` ademas de `\__proto__`.
+Vimos como funciona la propiedad _proto_ y que contiene un vinculo que los relaciona al siguiente elemento de la `prototype chain`, pero si analizamos una función podemos ver que hay una variable `prototype` ademas de `__proto__`.
 
 ![prototype](../img/prototype.png)
 
-#### `\__proto__` != `prototype`
+#### `__proto__` != `prototype`
 
 Esta variable `prototype` no es otra manera de llamar a _proto_ es un objeto totalmente distinto que aparece **solo** en las funciones, tiene un método inicial llamado `constructor` y se utiliza solo cuando una función esta siendo usadas como __*constructor*__.
 
@@ -172,7 +172,7 @@ Si queremos saber si un objeto es una instancia de cierto constructor podemos us
 
 Se habrán preguntado que tiene que ver el objeto `prototype` que comentamos antes, con los constructores que hasta ahora vimos.
 
-Cuando el constructor crea su instancia y la retorna le asigna una propiedad `\__proto__` ya que esta instancia va a ser un objeto. Esta propiedad _proto_ va a apuntar a nada menos que la propiedad `prototype` de la función constructora.
+Cuando el constructor crea su instancia y la retorna le asigna una propiedad `__proto__` ya que esta instancia va a ser un objeto. Esta propiedad _proto_ va a apuntar a nada menos que la propiedad `prototype` de la función constructora.
 
 Entonces que significa todo eso? Que inicialmente `prototype` solo va a tener el objeto `constructor` dentro, pero que si agregáramos nuevos métodos al `prototype`, la instancia creada también los podrá acceder mediante la `prototype chain`.
 
