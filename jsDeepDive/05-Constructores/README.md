@@ -221,9 +221,21 @@ Y conociendo el `prototype chain` podemos agregar elementos a cualquier tipo de 
 
 ``` javascript
 > String.prototype.saludar = function() {
-    retunr 'Hola soy un string, digo: ' + this;
+    return 'Hola soy un string, digo: ' + this;
   }
 
 > 'como estas?'.saludar()
 < 'Hola soy un string, digo: como estas?'
+```
+
+Si quisieramos saber a que prototype corresponde, podriamos usar el metodos `getPrototypeOf()`.
+
+``` javascript
+// siguiendo el ejemplo de más arriba
+> Object.getPrototypeOf(facu)
+< Object {hablar: 'function', constructor: 'function'}
+
+// lo que hace es mostrar el `prototype` del objeto pasado
+> Object.getPrototypeOf(facu) === Persona.prototype
+< true
 ```
