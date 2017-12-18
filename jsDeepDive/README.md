@@ -7,7 +7,15 @@
 
 En este modulo vamos a trabajar no solo con teoria, le vamos a agregar ejercicios para que ustedes hagan y puedan testear.
 
-Van a tener que `clonar` este repositorio usando [_git_](../git) y trabajarlo en su editor de texto. Vayan en orden y lean primero el README.md! (se ve mejor en el browser)
+## Setup
+
+Primero que nada van a tener que hacer un `fork` de este repositorio, un fork es una copia del repo entero pero bajo nuestro propio usuario, de esta manera podemos modificarlo a gusto sin repercutir en el original.
+
+Hagan click en el boton de `fork` arriba a la derecha.
+
+![Fork button](./img/fork.png)
+
+Una vez terminado vamos a estar en un nuevo repo de nuestra pertenencia, pasemos a `clonar` el repositorio a nuestra computadora usando [_git_](../git) y trabajenlo en su editor de texto. Vayan en orden y lean primero el README.md! (se ve mejor en el browser)
 
 * [Usando Test](./00-ProbandoTests/)
 * [Tipos de Datos y Objetos (Repaso)](./01-Objetos/)
@@ -25,4 +33,3 @@ Van a tener que `clonar` este repositorio usando [_git_](../git) y trabajarlo en
 * [CodePen: Entorno de Prueba](https://codepen.io/pen/)
 * [YouDontKnowJS - Book Series](https://github.com/getify/You-Dont-Know-JS)
 * [Eloquent JavaScript](http://eloquentjavascript.net/)
-
