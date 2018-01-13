@@ -36,7 +36,7 @@ function igualdad() {
   var foo, bar, bazz = 3;
 
   foo = bar = bazz;
-  return i;
+  return foo;
 }
 
 function boolean(bool) {
